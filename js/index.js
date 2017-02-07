@@ -41,6 +41,23 @@ console.info('formattedValueAtBoot', formattedValueAtBoot);
 
 const container: ?HTMLElement = document.querySelector('.dollars');
 
+// Track alternate ways to spend this $.
+const alternateOutlets = [
+  // Number of students that can earn an associates degree.
+  // http://www.huffingtonpost.com/2012/02/23/community-college-is-an-a_n_1297762.html
+  {
+    cost: 11852,
+    caption: " students can earn an Associate's Degree."
+  },
+  // Number of homeless that can be housed in NYC's Section 8 housing.
+  // https://www1.nyc.gov/site/nycha/section-8/voucher-payment-standards-vps-utility-allowance-schedule.page
+  // https://twitter.com/sacca/status/828043541460852736
+  {
+    cost: 21216,
+    caption: " homeless NYC families can pay for Section 8 housing for one year."
+  }
+];
+
 function calculate(): number {
   const elapsedTime: number = Date.now() - trumpStartMs;
   return (elapsedTime * nycCostPerMs) + baseline;
